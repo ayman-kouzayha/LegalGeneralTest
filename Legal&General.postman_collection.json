@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "cae5d0a5-6059-4341-9f5f-20c41e7f9e8d",
+		"name": "Legal&General",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InitChange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Pound\",\r\n        \"value\": 100,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Two Pounds\",\r\n        \"value\": 200,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Two Pence\",\r\n        \"value\": 2,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Pence\",\r\n        \"value\": 1,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Ten Pence\",\r\n        \"value\": 10,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Five Pence\",\r\n        \"value\": 5,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Twenty Pence\",\r\n        \"value\": 20,\r\n        \"quantity\": 2\r\n    },\r\n    {\r\n        \"name\": \"Fifty Pence\",\r\n        \"value\": 50,\r\n        \"quantity\": 2\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/change/init/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"change",
+						"init",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DepositChange",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Five Pence\",\r\n        \"value\": 5,\r\n        \"quantity\": 2\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/change/deposit/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"change",
+						"deposit",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetChange",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/change/get/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"change",
+						"get",
+						"16"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
