@@ -63,11 +63,12 @@ public class CoinUnitController {
         }
         try {
             CoinUnit[] result = calculateCoinChange(treeMapCoins, amount);
-            if(result == null) {
+            if (result == null) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
             return ResponseEntity.status(HttpStatus.OK).body(result);
         } catch (Exception e) {
+            System.err.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
@@ -78,13 +79,13 @@ public class CoinUnitController {
         int[][] coinsUsed = new int[amount + 1][coins.length];
         int[] minCoins = new int[amount + 1];
 
-        for (int i = 1; i <= amount; ++i) {
+        for (int i = 1; i <= amount; i++) {
             minCoins[i] = Integer.MAX_VALUE - 1;
         }
 
-        for (int i = 0; i < coins.length; ++i) {
+        for (int i = 0; i < coins.length; i++) {
             while (limits[i] > 0) {
-                for (int j = amount; j >= 0; --j) {
+                for (int j = amount; j >= 0; j--) {
                     int currAmount = j + coins[i];
                     if (currAmount <= amount) {
                         if (minCoins[currAmount] > minCoins[j] + 1) {
